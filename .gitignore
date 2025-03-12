@@ -1,3 +1,6 @@
 
 #ignora configurações do intellij
 .idea/
+
+Backend/me_backend/.env
+
