@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - M.E. Vitor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: #000;
+            color: #D4A053;
+        }
+        
+        /* Estilos para Login e Cadastro */
+        .form-container {
+            width: 350px;
+            margin: 100px auto;
+            padding: 20px;
+            background: #111; /* Preto mais suave */
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.6); /* Sombra dourada mais evidente */
+            text-align: center;
+        }
+        
+        .form-container h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #FFD700; /* Dourado mais vibrante */
+        }
+        
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px; /* Espaçamento mais equilibrado */
+        }
+        
+        .form-container input {
+            padding: 12px;
+            border: 2px solid #FFD700; /* Dourado mais visível */
+            border-radius: 5px;
+            font-size: 16px;
+            background: #222;
+            color: #FFD700;
+            transition: border 0.3s;
+        }
+        
+        .form-container input::placeholder {
+            color: #b8860b;
+        }
+        
+        .form-container input:focus {
+            border-color: #cf9606;
+            outline: none;
+        }
+        
+        .form-container button {
+            padding: 12px;
+            background: #FFD700;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .form-container button:hover {
+            background: #cf9606;
+        }
+        
+        .form-container p {
+            margin-top: 15px;
+        }
+        
+        .form-container a {
+            color: #FFD700;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .form-container a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Login</h2>
+        <form>
+            <input type="email" placeholder="E-mail" required>
+            <input type="password" placeholder="Senha" required>
+            <button type="submit">Entrar</button>
+            <p><a href="cadastro.html">Criar conta</a></p>
+        </form>
+    </div>
+
+</body>
+</html>

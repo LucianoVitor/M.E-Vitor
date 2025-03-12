@@ -1,0 +1,180 @@
+/* Reset e configurações gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: black;
+    color: orange;
+    padding: 10px 20px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icons img {
+    width: 300px;
+    object-fit: contain;
+}
+
+.logo img {
+    width: 150px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: grey;
+    height: 300px;
+    position: relative;
+}
+
+.prev, .next {
+    position: absolute;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.mais-vendidos {
+    text-align: center;
+    padding: 20px;
+}
+
+.produtos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.produto {
+    width: 150px;
+    text-align: center;
+}
+
+.img-placeholder {
+    width: 100%;
+    height: 150px;
+    background: lightgray;
+}
+
+/* Estilo do Rodapé */
+footer {
+    background: #111;
+    color: #ffd700;
+    padding: 30px 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.footer-left, .footer-center, .footer-right {
+    width: 30%;
+    text-align: left;
+}
+
+.footer-left h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #ffd700;
+}
+
+.footer-left p {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+}
+
+.footer-center h3, .footer-right h3 {
+    font-size: 18px;
+    border-bottom: 2px solid #ffd700;
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.footer-center ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-center ul li {
+    margin-bottom: 5px;
+}
+
+.footer-center ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+}
+
+.footer-center ul li a:hover {
+    text-decoration: underline;
+    color: #ffd700;
+}
+
+.footer-right p {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.footer-right strong {
+    color: #ffd700;
+}
