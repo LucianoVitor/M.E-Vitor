@@ -1,4 +1,4 @@
-package ME_VITOR.me_backend;
+package ME_VITOR.me_backend.Users;
 
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,12 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping
 public class UserController {
-
-UserModel newUser = new UserModel();
+    UserModel user = new UserModel();
 
     @GetMapping("/user")
-    public String getName(){
-       return "";
+    public String HelloWorld(){
+       return "Hello World";
     }
 
 
