@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping
 public class UserController {
 
-UserModel newUser = new UserModel();
+
 
     @GetMapping("/user")
     public String getName(){

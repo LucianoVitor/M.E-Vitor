@@ -2,8 +2,14 @@ package ME_VITOR.me_backend;
 
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 @Table(name ="tb_cadastro")
 public class UserModel {
 
@@ -11,27 +17,9 @@ public class UserModel {
  @GeneratedValue(strategy = GenerationType.IDENTITY)
  int id;
  String name;
+ @Column(unique = true)
  String email;
+ String Telefone;
  private String password;
 
- UserModel(String name, String email, String password){
-     this.name = name;
-     this.email = email;
-     this.password = password;
- }
-
-    public UserModel() {
-    }
-
-    public String getName(){
-        return this.name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
 }
