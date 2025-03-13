@@ -10,18 +10,20 @@
 
     <div class="form-container">
         <h2>Cadastro</h2>
-        <form>
+        <form onsubmit="return enviarFormulario(event)">
             <input type="text" id="Name" placeholder="Nome Completo" required>
             <input type="email" id="email" placeholder="E-mail" required>
             <input type="tel" id="phone" placeholder="Telefone" required>
             <input type="password" id="password1" placeholder="Senha" required>
             <input type="password" id="password2" placeholder="Confirmar Senha" required>
             <p2 id="msgsenha">as senhas não são iguais</p2>
-            <button type="submit" id="submitbutton" onclick="enviarDados()">Cadastrar</button>
+            <button type="submit" id="submitbutton"   >Cadastrar</button>
         </form>
+        
     </div>
-   
+    <script src="../JAVASCRIPT/api/script.js"></script>
     <script src="../JAVASCRIPT/events/passwordValidator.js"></script>
+    
 </body>
 
 
