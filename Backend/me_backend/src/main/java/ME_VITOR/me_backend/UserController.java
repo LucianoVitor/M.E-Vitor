@@ -13,7 +13,7 @@ public class UserController {
 
     @GetMapping("/user")
     public String getName(){
-       return "";
+       return "sla";
     }
 
 
