@@ -6,6 +6,7 @@ const msg =document.getElementById('msgsenha')
 msg.style.display='none'
 
 function verificarSenha() {
+  
   if (password.value === confirmpassword.value && password.value!=="" && confirmpassword.value!=="") {
     
     submitbtn.disabled = false;
@@ -18,6 +19,10 @@ function verificarSenha() {
     confirmpassword.style.borderColor='red'
     msg.style.display='inline'
   
+  }
+  if (password.value === "" && confirmpassword.value === "") {
+    confirmpassword.style.borderColor = '';
+    msg.style.display = 'none';
   }
 }
 password.addEventListener('input', verificarSenha);

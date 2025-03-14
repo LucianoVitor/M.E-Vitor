@@ -3,13 +3,14 @@ package ME_VITOR.me_backend.User;
 
 import org.springframework.stereotype.Service;
 
-import java.awt.*;
+
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
 
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
@@ -26,6 +27,5 @@ public class UserService {
     public UserModel CreateUser(UserModel user){
         return userRepository.save(user);
     }
-
 
 }

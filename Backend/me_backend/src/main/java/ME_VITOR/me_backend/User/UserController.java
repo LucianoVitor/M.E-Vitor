@@ -4,13 +4,14 @@ package ME_VITOR.me_backend.User;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/user")
 @CrossOrigin(origins = "http://127.0.0.1:5500")
 public class UserController {
 
-    private UserService userService;
+    private final UserService userService;
 
     public UserController(UserService userService) {
         this.userService = userService;
@@ -31,8 +32,6 @@ public class UserController {
     public String modifyUser(){
         return "Dados modificados";
     }
-
-
 
 
 }

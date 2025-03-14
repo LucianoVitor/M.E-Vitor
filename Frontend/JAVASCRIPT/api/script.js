@@ -1,3 +1,8 @@
+function realizarLogin(event){
+    event.preventDefault();
+    login();
+}
+
 
 function enviarFormulario(event) {
     event.preventDefault();
@@ -24,4 +29,22 @@ function enviarDados(){
             })
             .catch(error => console.error("Erro ao cadastrar usuário:", error));
 }
+
+/*function login(){
+    const userLogin={
+        email: document.getElementById("email").value,
+        };
+
+    fetch("http://localhost:8080/user/find_email",{
+        method: "POST", 
+        headers:{"Content-Type": "application/json"},
+        body: JSON.stringify(userLogin)
+       })
+    
+       .then(response => response.text())
+                .then(data => {console.log("Resposta do servidor:",data);
+                })
+                .catch(error => console.error("Erro ", error));
+    }*/
+
 
