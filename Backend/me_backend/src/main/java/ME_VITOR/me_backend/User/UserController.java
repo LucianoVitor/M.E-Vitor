@@ -33,5 +33,9 @@ public class UserController {
         return "Dados modificados";
     }
 
+//    @PostMapping("/Validate_email")
+//    public UserModel searchByEmail(){
+//
+//    }
 
 }

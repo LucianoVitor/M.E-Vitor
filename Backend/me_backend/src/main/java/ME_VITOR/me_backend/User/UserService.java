@@ -11,7 +11,7 @@ import java.util.Optional;
 public class UserService {
 
     private final UserRepository userRepository;
-
+    private UserMapper userMapper;
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
