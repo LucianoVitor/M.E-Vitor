@@ -20,3 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     showSlide(index);
 });
+
+
+
+
+
+

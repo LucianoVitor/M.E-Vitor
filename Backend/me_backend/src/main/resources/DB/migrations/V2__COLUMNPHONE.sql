@@ -1,0 +1,1 @@
+ALTER TABLE tb_cadastro ADD CONSTRAINT unique_telefone UNIQUE (telefone);
