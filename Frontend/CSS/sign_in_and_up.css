@@ -18,7 +18,7 @@ body {
     padding: 20px;
     background: #111; /* Preto mais suave */
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.6); /* Sombra dourada mais evidente */
+    box-shadow: 0 0 15px rgba(255, 217, 1, 0.6); /* Sombra dourada mais evidente */
     text-align: center;
 }
 
@@ -97,4 +97,9 @@ body {
 #msgsenha{
 
     color:red
+}
+.logo img {
+    width: 150px;
+    height: 100px;
+    object-fit: contain;
 }
