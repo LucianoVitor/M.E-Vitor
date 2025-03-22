@@ -1,6 +1,8 @@
 package ME_VITOR.me_backend.User;
 
 
+import ME_VITOR.me_backend.DTO.LoginRequest;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -33,9 +35,15 @@ public class UserController {
         return "Dados modificados";
     }
 
-//    @PostMapping("/Validate_email")
-//    public UserModel searchByEmail(){
-//
-//    }
+    @PostMapping("/auth")
+   public ResponseEntity<String> login (@RequestBody LoginRequest request){
+        boolean isAuthenticated = userService.login(request.getEmail(), request.getPassword());
+
+        if (isAuthenticated){
+            return ResponseEntity.ok("Login Realizado com Sucesso");
+        }else {
+            return ResponseEntity.status(401).body("Email ou Senha Inválida");
+        }
+    }
 
 }
