@@ -53,15 +53,6 @@ nav ul li a {
     object-fit: contain;
 }
 
-.carousel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: grey;
-    height: 300px;
-    position: relative;
-}
-
 .prev, .next {
     position: absolute;
     background: none;
@@ -90,6 +81,17 @@ nav ul li a {
     text-align: center;
 }
 
+.projetos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas de largura igual */
+    gap: 20px; /* Espaçamento entre os itens */
+}
+
+.projeto {
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
 .img-placeholder {
     width: 100%;
     height: 150px;
