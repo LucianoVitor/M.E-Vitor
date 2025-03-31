@@ -71,13 +71,14 @@ nav ul li a {
 }
 
 .produtos {
-    display: flex;
+    display: grid;
     justify-content: center;
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
 
 .produto {
-    width: 150px;
+    width: 300px;
     text-align: center;
 }
 
@@ -180,4 +181,3 @@ footer {
 .footer-right strong {
     color: #ffd700;
 }
-
