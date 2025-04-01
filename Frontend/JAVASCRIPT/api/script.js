@@ -56,5 +56,21 @@ function login(){
                 .catch(error =>{ console.error("Erro ", 401) , alert("Credenciais Inválidas, Verifique Seu Login e Senha")}); 
     }
     
-   
+
+    function forgotPassword(){
+        const userLogin={
+            email: document.getElementById("email").value,
+            password: document.getElementById("newpassword").value
+            };
+    
+        fetch("http://localhost:8080/user/change_password",{
+            method: "PATCH", 
+            headers:{"Content-Type": "application/json"},
+            body: JSON.stringify(userLogin)
+           })
+           .then(response => response.json())
+           .then(data => {console.log("Senha Trocada com Sucesso:", data)
+           })
+           .catch(error => console.error("Troca Mal-sucedida:", error));
+}
 

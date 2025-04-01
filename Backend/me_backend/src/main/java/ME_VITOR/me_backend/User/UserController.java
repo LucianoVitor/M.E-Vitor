@@ -6,7 +6,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/user")
@@ -30,9 +29,10 @@ public class UserController {
         return  userService.CreateUser(user);
     }
 
-    @PutMapping("/modify_user")
-    public String modifyUser(){
-        return "Dados modificados";
+    @PatchMapping("/change_password")
+    public  UserModel modifyPass(@RequestBody UserModel user){
+
+        return userService.changePassword(user);
     }
 
     @PostMapping("/auth")
