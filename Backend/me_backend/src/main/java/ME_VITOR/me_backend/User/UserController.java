@@ -2,6 +2,8 @@ package ME_VITOR.me_backend.User;
 
 
 import ME_VITOR.me_backend.DTO.LoginRequest;
+import ME_VITOR.me_backend.Token.ResetPasswordRequest;
+import org.eclipse.angus.mail.imap.protocol.Status;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,10 +31,21 @@ public class UserController {
         return  userService.CreateUser(user);
     }
 
-    @PatchMapping("/change_password")
-    public  UserModel modifyPass(@RequestBody UserModel user){
 
-        return userService.changePassword(user);
+
+
+    @PatchMapping("/reset/request")
+    public ResponseEntity<String> requestmodifyPass(@RequestBody UserModel user){
+
+         userService.RequestchangePassword(user);
+         return ResponseEntity.ok("Sla pô");
+    }
+
+
+    @PatchMapping("/reset/confirm")
+    public void changePassword(@RequestBody ResetPasswordRequest resetRequest){
+
+        userService.ChangePassword(resetRequest);
     }
 
     @PostMapping("/auth")
