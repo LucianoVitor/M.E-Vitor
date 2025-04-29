@@ -12,10 +12,14 @@
     </div>
     <div class="form-container">
         <h2>Esqueci a Senha</h2>
-        <form onsubmit="return forgotPassword(event)">
+        <form onsubmit="return Esqueciasenha(event)" id="formReset1">
             <input type="email" id="email" placeholder="E-mail da Conta" required>
-            <input type="password" id="newpassword" placeholder=" Digite a nova Senha" required>
             <button type="submit">Trocar Senha</button>
+        </form>
+        <form onsubmit="return confirmarToken(event)" id="formReset2" style="display: none;">
+            <input type="uuid" id="uuidform" placeholder="Token de verificação" required>
+            <input type="password" id="newpassword" placeholder=" Digite a nova Senha" required>
+            <button style="margin-top: 10px;" type="submit">Enviar Token</button>
         </form>
     </div>
 <script src ="../JAVASCRIPT/api/script.js"></script>

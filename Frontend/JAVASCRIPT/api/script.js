@@ -9,6 +9,17 @@ function enviarFormulario(event) {
     enviarDados();
 }
 
+function Esqueciasenha(event) {
+    event.preventDefault();
+    forgotPassword();
+}
+
+function confirmarToken(event){
+    event.preventDefault();
+    confirmPasswordChange();
+}
+
+
 
 function enviarDados(){
     const userData={
@@ -17,7 +28,7 @@ function enviarDados(){
     telefone: document.getElementById("phone").value,
     password: document.getElementById("password1").value
     };
-   fetch("http://localhost:8080/user/create",{
+   fetch("http://localhost:8081/user/create",{
     method: "POST", 
     headers:{"Content-Type": "application/json"},
     body: JSON.stringify(userData)
@@ -36,7 +47,7 @@ function login(){
         password: document.getElementById("password").value
         };
 
-    fetch("http://localhost:8080/user/auth",{
+    fetch("http://localhost:8081/user/auth",{
         method: "POST", 
         headers:{"Content-Type": "application/json"},
         body: JSON.stringify(userLogin)
@@ -58,19 +69,71 @@ function login(){
     
 
     function forgotPassword(){
+        
+    
         const userLogin={
-            email: document.getElementById("email").value,
-            password: document.getElementById("newpassword").value
+            email: document.getElementById("email").value
             };
     
-        fetch("http://localhost:8080/user/change_password",{
+        fetch("http://localhost:8081/user/reset/request",{
             method: "PATCH", 
             headers:{"Content-Type": "application/json"},
             body: JSON.stringify(userLogin)
            })
-           .then(response => response.json())
-           .then(data => {console.log("Senha Trocada com Sucesso:", data)
-           })
-           .catch(error => console.error("Troca Mal-sucedida:", error));
-}
+           .then(async response => {
+
+            if (response.ok) {
+                // Se o status for 2xx (como 200 ou 204), avançamos
+                console.log("Token enviado com sucesso");
+                document.getElementById("formReset1").style.display = "none";
+                document.getElementById("formReset2").style.display = "block";
+            } else if (response.status === 400) {
+                // Se houver erro (400 Bad Request)
+                console.error("Erro ao enviar o token. Verifique o e-mail.");
+                alert("Erro ao enviar o token.");
+            } else {
+                console.error("Erro desconhecido", response.status);
+                alert("Erro desconhecido ao tentar redefinir a senha.");
+            }
+        })
+        .catch(error => {
+            console.error("Erro de rede ou outro erro:", error);
+            alert("Erro ao enviar a requisição.");
+        })
+            }
+            
+
+function confirmPasswordChange(){
+        
+    
+    const userLogin={
+        email: document.getElementById("email").value,
+        password: document.getElementById("newpassword").value,
+        token: document.getElementById("uuidform").value
+        };
+
+    fetch("http://localhost:8081/user/reset/",{
+        method: "PATCH", 
+        headers:{"Content-Type": "application/json"},
+        body: JSON.stringify(userLogin)
+       })
+       .then(async response => {
+
+        if (response.ok) {
+            // Se o status for 2xx (como 200 ou 204), avançamos
+            console.log("senha enviado com sucesso")
+        } else if (response.status === 400) {
+            // Se houver erro (400 Bad Request)
+            console.error("Erro ao enviar o token. Verifique o e-mail.");
+            alert("Erro ao enviar o token.");
+        } else {
+            console.error("Erro desconhecido", response.status);
+            alert("Erro desconhecido ao tentar redefinir a senha.");
+        }
+    })
+    .catch(error => {
+        console.error("Erro de rede ou outro erro:", error);
+        alert("Erro ao enviar a requisição.");
+    })
+        }
 
