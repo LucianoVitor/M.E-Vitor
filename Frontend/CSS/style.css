@@ -9,13 +9,66 @@ body {
     font-family: Arial, sans-serif;
 }
 
-header {
+.header-top {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    background: black;
-    color: orange;
+    justify-content: space-between; /* Garanta que o conteúdo seja distribuído nas extremidades */
+    background-color: black;
     padding: 10px 20px;
+    gap: 20px; /* Espaço entre os itens */
+}
+
+.logo img,
+.logo-nome img {
+    height: 60px;  /* Ajuste proporcional para ambas */
+    width: auto;
+    object-fit: contain;
+}
+
+/* Ajustes específicos para os ícones */
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: auto; /* Isso vai empurrar os ícones para a direita */
+}
+
+.icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icons img {
+    width: 200px; /* Aumente a largura do ícone */
+    height: auto; /* Mantém a proporção original */
+    object-fit: contain;
+}
+
+.menu-principal {
+    background-color: black;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.menu-principal ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 40px;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-principal ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.menu-principal ul li a:hover {
+    color: #FFD700;
 }
 
 nav ul {
@@ -27,30 +80,6 @@ nav ul {
 nav ul li a {
     text-decoration: none;
     color: white;
-    font-size: 16px;
-}
-
-.icons {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.icons a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.icons img {
-    width: 300px;
-    object-fit: contain;
-}
-
-.logo img {
-    width: 150px;
-    height: 100px;
-    object-fit: contain;
 }
 
 .prev, .next {
@@ -181,3 +210,78 @@ footer {
 .footer-right strong {
     color: #ffd700;
 }
+
+/* (visita.html) Estilo do Agendamento de Visitas */
+.agendamento-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #000000; /* fundo preto */
+    color: #FFD700; /* texto amarelo */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.2); /* leve brilho dourado */
+}
+
+.agendamento-container h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #FFD700; /* título amarelo */
+}
+
+form label {
+    display: block;
+    margin-top: 1rem;
+    color: #FFD700; /* label amarelo */
+}
+
+form input,
+form select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: 1px solid #FFD700; /* borda amarela */
+    border-radius: 5px;
+    background-color: #121212; /* fundo escuro */
+    color: #FFD700; /* texto amarelo */
+}
+
+/* Estilo específico para input de data */
+form input[type="date"] {
+    color: #FFD700; /* texto amarelo */
+    background-color: #121212;
+    border: 1px solid #FFD700;
+}
+
+form input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1); /* ícone do calendário em amarelo/branco (Chrome/Safari) */
+}
+
+form input::placeholder,
+form select:invalid {
+    color: #999; /* cor de dica ou opção vazia */
+}
+
+form button {
+    margin-top: 1.5rem;
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #FFD700; /* amarelo normal */
+    color: #000; /* texto preto */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease; /* transição suave */
+}
+
+form button:hover {
+    background-color: #bfa200; /* amarelo mais escuro ao passar o mouse */
+}
+
+#mensagem {
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: bold;
+    color: #FFD700;
+}
+/* (visita.html) Término do Estilo do Agendamento de Visitas */

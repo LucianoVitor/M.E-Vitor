@@ -11,6 +11,42 @@ body {
     color: #D4A053;
 }
 
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Garanta que o conteúdo seja distribuído nas extremidades */
+    background-color: black;
+    padding: 10px 20px;
+    gap: 20px; /* Espaço entre os itens */
+}
+
+.logo img,
+.logo-nome img {
+    height: 60px;  /* Ajuste proporcional para ambas */
+    width: auto;
+    object-fit: contain;
+}
+
+/* Ajustes específicos para os ícones */
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: auto; /* Isso vai empurrar os ícones para a direita */
+}
+
+.icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icons img {
+    width: 200px; /* Aumente a largura do ícone */
+    height: auto; /* Mantém a proporção original */
+    object-fit: contain;
+}
+
 /* Estilos para Login e Cadastro */
 .form-container {
     width: 350px;
