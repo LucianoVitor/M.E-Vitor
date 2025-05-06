@@ -285,3 +285,33 @@ form button:hover {
     color: #FFD700;
 }
 /* (visita.html) Término do Estilo do Agendamento de Visitas */
+
+
+/* (orçamento.html) Começo do Estilo da página Solicitar Orçamento */
+#form-orcamento {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #000000;
+    border-radius: 12px;
+    color: #fff; /* cor do texto branca */
+}
+
+#form-orcamento label {
+    font-family: Arial, sans-serif;
+    font-weight: 600;
+    color: #ffd700;
+}
+
+#form-orcamento .form-control,
+#form-orcamento .form-select {
+    border-radius: 10px;
+    background-color: #121212;
+    color: #f7f7f7;
+    border: 1px solid #555;
+}
+
+#form-orcamento .form-control::placeholder {
+    color: #ccc;
+}
+/* (orçamento.html) Término do Estilo da página Solicitar Orçamento */
