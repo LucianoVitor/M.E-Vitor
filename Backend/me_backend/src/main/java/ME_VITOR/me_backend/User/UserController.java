@@ -3,11 +3,14 @@ package ME_VITOR.me_backend.User;
 
 import ME_VITOR.me_backend.DTO.LoginRequest;
 import ME_VITOR.me_backend.Token.ResetPasswordRequest;
+import ME_VITOR.me_backend.Util.JwtUtil;
 import org.eclipse.angus.mail.imap.protocol.Status;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/user")
@@ -50,10 +53,12 @@ public class UserController {
 
     @PostMapping("/auth")
    public ResponseEntity<String> login (@RequestBody LoginRequest request){
-        boolean isAuthenticated = userService.login(request.getEmail(), request.getPassword());
+        Optional<UserModel> userOptional = userService.login(request.getEmail(), request.getPassword());
 
-        if (isAuthenticated){
-            return ResponseEntity.ok("Login Realizado com Sucesso");
+        if (userOptional.isPresent()){
+            UserModel user = userOptional.get();
+            String token = JwtUtil.gerarToken(user.getEmail(), user.getId(), user.getName(), user.getRole());
+            return ResponseEntity.ok(token);
         }else {
             return ResponseEntity.status(401).body("Email ou Senha Inválida");
         }
