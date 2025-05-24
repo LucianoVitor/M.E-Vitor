@@ -27,9 +27,9 @@
         </div>    
         <nav class="menu-principal">
             <ul>
-                <li><a href="orcamento.html">Solicite seu orçamento</a></li>
+                <li><a href="orcamento.html" id="orcamento">Solicite seu orçamento</a></li>
                 <li><a href="maisvendidos.html">Mais Vendidos</a></li>
-                <li><a href="visita.html">Agende sua Visita</a></li>
+                <li><a href="visita.html" id="visita">Agende sua Visita</a></li>
                 <li><a href="#">Portfólio</a></li>
             </ul>
         </nav>
@@ -144,4 +144,8 @@
         </div>
     </footer>    
 </body>
+<script src="/Frontend/JAVASCRIPT/rotas.js"></script>
+<script>ProtectRoute('orcamento')
+    ProtectRoute('visita')
+</script>
 </html>

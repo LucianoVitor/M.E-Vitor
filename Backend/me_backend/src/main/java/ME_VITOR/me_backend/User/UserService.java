@@ -30,6 +30,7 @@ public class UserService {
     private TokenRepository tokenRepository;
 
 
+
     @Autowired
     private EmailService emailService;
     private final BCryptPasswordEncoder passwordEncoder;
@@ -44,8 +45,7 @@ public class UserService {
 
 
     //Mostrar Usuários
-    public List<UserModel> showUsers(){
-        return userRepository.findAll();
+    public List<UserModel> showUsers(){ return userRepository.findAll();
     }
 
 
@@ -56,17 +56,19 @@ public class UserService {
         }
         String toEncode = user.getPassword();
         user.setPassword(passwordEncoder.encode(toEncode));
+        user.setRole(Role.USER);
         return userRepository.save(user);
 
     }
 
-public boolean login(String email, String password) {
+public Optional<UserModel> login(String email, String password) {
     Optional<UserModel> userOptional = userRepository.findByEmail(email);
     if (userOptional.isPresent()) {
         UserModel user = userOptional.get();
-        return passwordEncoder.matches(password, user.getPassword());
+        if (passwordEncoder.matches(password, user.getPassword())){
+        return Optional.of(user);}
+    } return Optional.empty();
     }
-    return false;}
 
 
 
