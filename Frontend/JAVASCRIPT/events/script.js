@@ -21,29 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     showSlide(index);
 });
 
-//(visita.html) Começo da página de Agendamento de Visitas
-document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("form-agendamento");
-    const mensagem = document.getElementById("mensagem");
 
-
-
-    form.addEventListener("submit", function (e) {
-        e.preventDefault();
-
-     
-
-        if (datasAgendadas[chave]) {
-            mensagem.textContent = "Esse horário já está reservado!";
-            mensagem.style.color = "red";
-        } else {
-            datasAgendadas[chave] = true;
-            mensagem.textContent = "Visita agendada com sucesso!";
-            mensagem.style.color = "green";
-            form.reset();
-        }
-    });
-});
 //(visita.html) Término da página de Agendamento de Visitas
 
 //(orçamento.html) Começo da página de Solicitar de Orçamentos

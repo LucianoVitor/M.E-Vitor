@@ -46,7 +46,7 @@ public class OrcamentoService {
             orcamento.setProjetoDesenho(projetoDesenho);
             orcamentoRepository.save(orcamento);
             System.out.println("sucesso");
-            emailService.enviarEmail(email,"Solicitação de Orçamento Realizada", "Verifique a descrição enviada: \n"+"Data para ínicio:"+dataInicio+"\nDescrição do Projeto: "+projetoDescricao+"\nRetornaremos com uma resposta em breve, fique atento ao seu email e telefone.");
+            //emailService.enviarEmail(email,"Solicitação de Orçamento Realizada", "Verifique a descrição enviada: \n"+"Data para ínicio:"+dataInicio+"\nDescrição do Projeto: "+projetoDescricao+"\nRetornaremos com uma resposta em breve, fique atento ao seu email e telefone.");
         } else throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
 
     }

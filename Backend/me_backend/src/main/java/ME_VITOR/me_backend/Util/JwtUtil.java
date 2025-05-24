@@ -16,8 +16,9 @@ public class JwtUtil {
     private static final Key SECRET = Keys.hmacShaKeyFor("*!DJpr0laps0!*123456CachOrRão123".getBytes());
 
     public static String getUsername(String token) {
-        return Jwts.parser()
+        return Jwts.parserBuilder()
                 .setSigningKey(SECRET)
+                .build()
                 .parseClaimsJws(token)
                 .getBody()
                 .getSubject();
@@ -42,9 +43,13 @@ public class JwtUtil {
 
     public static boolean isTokenValido(String token) {
         try {
-            Jwts.parser().setSigningKey(SECRET).parseClaimsJws(token);
+            Jwts.parserBuilder()
+                    .setSigningKey(SECRET)
+                    .build()
+                    .parseClaimsJws(token);
             return true;
         } catch (Exception e) {
+            System.out.println("Token inválido: " + e.getMessage()); // para debug
             return false;
         }
     }
