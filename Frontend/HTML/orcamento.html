@@ -37,20 +37,8 @@
     <!-- Seção de Solicitação de Orçamento -->
     <section class="container my-5">
         <h2 class="text-center mb-4">Solicite seu Orçamento</h2>
-        <form id="form-orcamento" class="bg-light p-4 rounded shadow">
-            <div class="mb-3">
-                <label for="nome" class="form-label">Nome Completo*</label>
-                <input type="text" class="form-control" id="nome" required>
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Informe seu melhor e-mail*</label>
-                <input type="email" class="form-control" id="email" required>
-            </div>
-            <div class="mb-3">
-                <label for="telefone">Qual o melhor telefone/Whatsapp para contato?</label>
-                <input type="text" class="form-control" id="telefone" name="telefone" required>
-            </div>
-            <div class="mb-3">
+        <form onsubmit="return enviarOrcamento(event)" id="form-orcamento" class="bg-light p-4 rounded shadow" >
+             <div class="mb-3">
                 <label for="desenho" class="form-label">Você já tem algum desenho pronto?</label>
                 <select class="form-select" id="desenho" required>
                     <option value="" disabled selected>Selecione</option>
@@ -60,26 +48,18 @@
             </div>
             <div class="mb-3 d-none" id="upload-desenho">
                 <label for="arquivo" class="form-label">Envie seu desenho (PDF, JPG ou PNG)</label>
-                <input type="file" class="form-control" id="arquivo" accept=".pdf,.jpg,.jpeg,.png">
+                <input type="file" class="form-control" id="arquivoorcamento" accept=".pdf,.jpg,.jpeg,.png">
             </div>
             <div class="mb-3">
                 <label for="data" class="form-label">Quando pretende iniciar o projeto?</label>
-                <input type="date" class="form-control" id="data" required>
+                <input type="date" min="{{today}}" class="form-control" id="data" required>
             </div>
-            <div class="mb-3">
-                <label for="preferencia" class="form-label">Prefere receber o orçamento por:</label>
-                <select class="form-select" id="preferencia" required>
-                    <option value="" disabled selected>Selecione uma opção</option>
-                    <option value="whatsapp">Whatsapp</option>
-                    <option value="email">E-mail</option>
-                    <option value="ambos">E-mail e Whatsapp</option>
-                </select>
-            </div>
+        
             <div class="mb-3">
                 <label for="descricao" class="form-label">Descreva um pouco sobre o projeto*</label>
-                <textarea class="form-control" id="descricao" rows="5" required></textarea>
+                <textarea class="form-control" maxlength="2048" id="descricao" rows="5" required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary w-100">Enviar Solicitação</button>
+            <button type="submit" class="btn btn-primary w-100" id="BTNsolicitacao">Enviar Solicitação</button>
         </form>
     </section>
 
@@ -114,4 +94,12 @@
         </div>
     </footer>    
 </body>
+<script src="/Frontend/JAVASCRIPT/rotas.js"></script>
+<script>
+  const today = new Date().toISOString().split("T")[0];
+  document.querySelector('input[type="date"]').setAttribute("min", today);
+</script>
+<script src="/Frontend/JAVASCRIPT/api/script.js"></script>
+<script src="/Frontend/JAVASCRIPT/rotas.js"></script>
+<script>RedirectRoute()</script>
 </html>
