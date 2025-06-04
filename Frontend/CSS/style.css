@@ -315,3 +315,87 @@ form button:hover {
     color: #ccc;
 }
 /* (orçamento.html) Término do Estilo da página Solicitar Orçamento */
+/* Carrinho de Compras */
+/* Conteúdo Carrinho */
+.carrinho-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.carrinho-itens {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.item-carrinho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #f8f8f8;
+}
+
+.detalhes-item {
+    flex: 1;
+    margin-left: 20px;
+    text-align: left;
+}
+
+.detalhes-item h4 {
+    margin-bottom: 5px;
+}
+
+.detalhes-item p {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.btn-remover {
+    background-color: crimson;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-remover:hover {
+    background-color: darkred;
+}
+
+.resumo-carrinho {
+    border-top: 2px solid #ccc;
+    padding-top: 20px;
+    text-align: right;
+}
+
+.resumo-carrinho h3 {
+    margin-bottom: 10px;
+}
+
+.resumo-carrinho p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.btn-finalizar {
+    background-color: #FFD700;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-finalizar:hover {
+    background-color: #e6c200;
+}
+/* Carrinho de Compras */
