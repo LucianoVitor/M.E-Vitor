@@ -22,13 +22,12 @@
             </div>
             <div class="icons" id="user-info">
                 <a href="login.html"><img src="../assets/Icon_entrar.png" alt="Icon Cliente"></a>
-                <a href="#">🛒</a>
+                <a href="carrinho.html">🛒</a>
             </div>
         </div>    
         <nav class="menu-principal">
             <ul>
                 <li><a href="orcamento.html" id="orcamento">Solicite seu orçamento</a></li>
-                <li><a href="maisvendidos.html">Mais Vendidos</a></li>
                 <li><a href="visita.html" id="visita">Agende sua Visita</a></li>
                 <li><a href="portfolio.html">Portfólio</a></li>
             </ul>
@@ -135,51 +134,39 @@
         <div class="produtos">
             <div class="produto">          
                 <div class="img-placeholder"><img src="/Frontend/assets/img_portfolio/img_mais_vendidos/IMG_5037.jpg" alt="Movel preto com gavetas">   </div>
-                <p>Nicho MDF Branco 35x40x40</p>
-                <p>POR: R$ 299,99 à vista</p>
-                <p>À PRAZO: 400,00 em 6x</p>               
+                <p>Porta Temperos</p>
+                <p>POR: R$ 150,00 à vista</p>
+                <p>À PRAZO: 170,00 em 6x</p>
+                <button class="btn-carrinho" onclick="adicionarAoCarrinho('Porta Temperos', 150.00)">
+                    🛒 Adicionar ao Carrinho
+                </button>                               
             </div>
             <div class="produto">
                 <div class="img-placeholder"><img src="/Frontend/assets/img_portfolio/img_mais_vendidos/IMG_5041.jpg" alt="Mesa preta"></div>
-                <p>Nicho MDF Branco 35x40x40</p>
+                <p>Expositor 100x80</p>
                 <p>POR: R$ 299,99 à vista</p>
-                <p>À PRAZO: 400,00 em 6x</p>
+                <p>À PRAZO: 320,00 em 6x</p>
+                <button class="btn-carrinho" onclick="adicionarAoCarrinho('Expositor 100x80', 299.99)">
+                    🛒 Adicionar ao Carrinho
+                </button>                
             </div>
             <div class="produto">
                 <div class="img-placeholder"><img src="/Frontend/assets/img_portfolio/img_mais_vendidos/IMG_5049.jpg" alt="Suporte para fogão"></div>
                 <p>Nicho MDF Branco 35x40x40</p>
                 <p>POR: R$ 299,99 à vista</p>
                 <p>À PRAZO: 400,00 em 6x</p>
+                <button class="btn-carrinho" onclick="adicionarAoCarrinho('Nicho MDF Branco 35x40x40', 299.99)">
+                    🛒 Adicionar ao Carrinho
+                </button>                
             </div>
             <div class="produto">
                 <div class="img-placeholder"><img src="/Frontend/assets/img_portfolio/img_mais_vendidos/IMG_5051.jpg" alt="Painel para TV"></div>
                 <p>Nicho MDF Branco 35x40x40</p>
                 <p>POR: R$ 299,99 à vista</p>
                 <p>À PRAZO: 400,00 em 6x</p>
-            </div>
-            <div class="produto">
-                <div class="img-placeholder"><img src="/Frontend/assets/img_portfolio/img_mais_vendidos/IMG_5055.jpg" alt="Armário de 8 portas"></div>
-                <p>Nicho MDF Branco 35x40x40</p>
-                <p>POR: R$ 299,99 à vista</p>
-                <p>À PRAZO: 400,00 em 6x</p>
-            </div>
-            <div class="produto">
-                <div class="img-placeholder"><img src="/Frontend/assets/img_portfolio/img_mais_vendidos/IMG_5066.jpg" alt="Mesas de cabeceira brancas"></div>
-                <p>Nicho MDF Branco 35x40x40</p>
-                <p>POR: R$ 299,99 à vista</p>
-                <p>À PRAZO: 400,00 em 6x</p>
-            </div>
-            <div class="produto">
-                <div class="img-placeholder"><img src="/Frontend/assets/img_portfolio/img_mais_vendidos/IMG_5071.jpg" alt="Armário de 2 portas"></div>
-                <p>Nicho MDF Branco 35x40x40</p>
-                <p>POR: R$ 299,99 à vista</p>
-                <p>À PRAZO: 400,00 em 6x</p>
-            </div>
-            <div class="produto">
-                <div class="img-placeholder"><img src="/Frontend/assets/img_portfolio/img_mais_vendidos/IMG_5075.jpg" alt="Painel largo para TV"></div>
-                <p>Nicho MDF Branco 35x40x40</p>
-                <p>POR: R$ 299,99 à vista</p>
-                <p>À PRAZO: 400,00 em 6x</p>
+                <button class="btn-carrinho" onclick="adicionarAoCarrinho('Nicho MDF Branco 35x40x40', 299.99)">
+                    🛒 Adicionar ao Carrinho
+                </button>                
             </div>
         </div>
     </section>
@@ -187,7 +174,7 @@
         <div class="footer-container">
             <div class="footer-left">
                 <h2>M.E. VITOR</h2>
-                <p>HÁ MAIS DE 20 ANOS NO MERCADO DE FABRICAÇÃO DE MÓVEIS PLANEJADOS</p>
+                <p>HÁ MAIS DE 15 ANOS NO MERCADO DE FABRICAÇÃO DE MÓVEIS PLANEJADOS</p>
                 <div class="social-icons">
                     <a href="https://www.facebook.com" target="_blank">
                     <img src="../assets/facebook.png" alt="Facebook">
@@ -205,17 +192,14 @@
                 <h3>INSTITUCIONAL</h3>
                 <ul>
                     <li><a href="#">Quem Somos</a></li>
-                    <li><a href="#">Política de entrega, troca e devoluções</a></li>
-                    <li><a href="#">Dúvidas Frequentes</a></li>
-                    <li><a href="#">Depoimentos de Clientes</a></li>
                 </ul>
             </div>
     
             <div class="footer-right">
                 <h3>ATENDIMENTO</h3>
-                <p>(00) 00000-0000</p>
-                <p>(00) 00000-0000</p>
-                <p>📧 <strong>contato@gmail.com</strong></p>
+                <p>(11) 98897-2115</p>
+                <p>(11) 99373-8355</p>
+                <p>📧 <strong>mevitormoveisplanejados@gmail.com</strong></p>
             </div>
         </div>
     </footer> 
