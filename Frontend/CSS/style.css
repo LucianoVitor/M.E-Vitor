@@ -315,6 +315,10 @@ form button:hover {
     color: #ccc;
 }
 /* (orçamento.html) Término do Estilo da página Solicitar Orçamento */
+
+.user-greeting{
+    color: white;
+}
 /* Carrinho de Compras */
 /* Conteúdo Carrinho */
 .carrinho-container {
