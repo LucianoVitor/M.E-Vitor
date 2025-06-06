@@ -13,20 +13,25 @@
 
     <!-- 🔝 Cabeçalho -->
     <header>
-        <div class="container-header">
+        <div class="header-top">
             <div class="logo">
-                <a href="index.html"><img src="assets/logo.png" alt="Logo M.E. Vitor"></a>
+                <a href="index.html"><img src="../assets/logo-iniciais.png" alt="Logo M.E.Vitor"></a>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="portfolio.html">Portfólio</a></li>
-                    <li><a href="produtos.html">Produtos</a></li>
-                    <li><a href="orcamento.html">Orçamento</a></li>
-                    <li><a href="carrinho.html">Carrinho 🛒</a></li>
-                </ul>
-            </nav>
-        </div>
+            <div class="logo-nome">
+                <a href="index.html"><img src="../assets/logo-nome.png" alt="Logo M.E.Vitor"></a>
+            </div>
+            <div class="icons">
+                <a href="login.html"><img src="../assets/Icon_entrar.png" alt="Icon Cliente"></a>
+                <a href="#">🛒</a>
+            </div>
+        </div>    
+        <nav class="menu-principal">
+            <ul>
+                <li><a href="orcamento.html" id="orcamento">Solicite seu orçamento</a></li>
+                <li><a href="visita.html" id="visita">Agende sua Visita</a></li>
+                <li><a href="portfolio.html">Portfólio</a></li>
+            </ul>
+        </nav>
     </header>
 
     <!-- 🛒 Carrinho -->
@@ -44,11 +49,38 @@
 
     <!-- 🔻 Rodapé -->
     <footer>
-        <div class="container-footer">
-            <p>&copy; 2025 M.E. Vitor - Marcenaria de Móveis Planejados. Todos os direitos reservados.</p>
+        <div class="footer-container">
+            <div class="footer-left">
+                <h2>M.E. VITOR</h2>
+                <p>HÁ MAIS DE 15 ANOS NO MERCADO DE FABRICAÇÃO DE MÓVEIS PLANEJADOS</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com" target="_blank">
+                    <img src="../assets/facebook.png" alt="Facebook">
+                    </a>
+                    <a href="#" target="_blank">
+                    <img src="../assets/instagram.png" alt="Instagram">
+                    </a>
+                    <a href="#" target="_blank">
+                    <img src="../assets/Whatsapplogo.png" alt="WhatsApp">
+                 </a>
+                </div>
+            </div>
+    
+            <div class="footer-center">
+                <h3>INSTITUCIONAL</h3>
+                <ul>
+                    <li><a href="#">Quem Somos</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-right">
+                <h3>ATENDIMENTO</h3>
+                <p>(11) 98897-2115</p>
+                <p>(11) 99373-8355</p>
+                <p>📧 <strong>mevitormoveisplanejados@gmail.com</strong></p>
+            </div>
         </div>
-    </footer>
-
+    </footer>    
     <script src="carrinho.js"></script>
 </body>
 </html>
