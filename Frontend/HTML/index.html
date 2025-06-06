@@ -20,7 +20,7 @@
             <div class="logo-nome">
                 <img src="../assets/logo-nome.png" alt="Nome da Empresa">
             </div>
-            <div class="icons">
+            <div class="icons" id="user-info">
                 <a href="login.html"><img src="../assets/Icon_entrar.png" alt="Icon Cliente"></a>
                 <a href="#">🛒</a>
             </div>
@@ -218,7 +218,36 @@
                 <p>📧 <strong>contato@gmail.com</strong></p>
             </div>
         </div>
-    </footer>    
+    </footer> 
+    <script>
+    function parseJwt(token) {
+        try {
+            const base64Url = token.split('.')[1];
+            const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+            const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
+            return JSON.parse(jsonPayload);
+        } catch (e) {
+            return null;
+        }
+    }
+
+    const token = localStorage.getItem('jwtToken'); 
+    const userInfoDiv = document.getElementById('user-info');
+
+    if (token) {
+        const payload = parseJwt(token);
+        if (payload && payload.name) {
+            userInfoDiv.innerHTML= `
+                <span class="user-greeting">Olá, <span id="user-name"></span></span>
+                <a href="#">🛒</a>
+            `;
+            const userNameSpan = document.getElementById('user-name');
+            userNameSpan.textContent = payload.name;
+        }
+    }
+</script>   
 </body>
 <script src="/Frontend/JAVASCRIPT/rotas.js"></script>
 <script>ProtectRoute("orcamento")
