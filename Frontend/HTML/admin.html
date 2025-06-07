@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel Admin</title>
+  <link rel="stylesheet" href="../CSS/admin.css">
+</head>
+<body>
+  <!--menu lateral-->
+  <nav class="sidebar">
+    <ul>
+      <li><a href="#orcamentos">Orçamentos</a></li>
+      <li><a href="#visitas">Visitas</a></li>
+      <li><a href="#portfolio">Portfólio</a></li>
+    </ul>
+  </nav>
+  
+  <main>
+     <header class="topbar">
+     <img src="../assets/logo-nome.png" alt="Logo">
+     <h1> Painel Administrativo </h1>
+    </header>
+
+    <!--Orçamentos-->
+    <section class="card" id="orcamentos">
+      <h2>Orçamentos Recebidos</h2>
+      <ul class="lista-orcamentos" id="listaOrcamentos"></ul>
+    </section>
+
+    <!--Exemplo de visita agendada-->
+    <section class="card" id="visitas">
+      <h2>Visitas Agendadas</h2>
+      <div class="visita">
+        <p><strong>Cliente:</strong> Joaquim Souza</p>
+        <p><strong>Data:</strong> 28/05/2025</p>
+        <p><strong>Endereço:</strong> Rua das Rosas, 123</p>
+      </div>
+    </section>
+
+    <!--Botões para ações no portfólio (não funcionando ainda)-->
+    <section class="card" id="portfolio">
+      <h2>Editar Portfólio</h2>
+      <button class="acao">Adicionar Produto</button>
+      <button class="acao">Editar Produto</button>
+      <button class="acao">Remover Produto</button>
+    </section>
+  </main>
+
+  <!-- Modal de detalhes do orçamento -->
+  <div class="modal" id="modalOrcamento">
+    <div class="modal-content">
+      <span class="fechar" onclick="fecharModal()">&times;</span>
+      <h3 id="modalNome"></h3>
+      <p><strong> Data: </strong> <span id="modalData"></span></p>
+      <p><strong>Descricao:</strong></p>
+      <p id="modalDescricao"></p>
+      <button class="aceitar">Aceitar</button>
+      <button class="recusar">Recusar</button>
+    </div>
+  </div>
+
+  <!--<script src="admin.js"></script>-->
+  <script>
+  const orcamentos = [
+    {
+      nome: "Carla Oliveira",
+      descricao: "Gostaria de um orçamento para guarda-roupa planejado.",
+      data: "2024-12-02"
+    },
+    {
+      nome: "Gustavo Oliveira Campos",
+      descricao: "Preciso de orçamento para armário de cozinha.",
+      data: "2025-02-05"
+    },
+    {
+      nome: "Juliana Martins",
+      descricao: "Solicito orçamento para estante de sala.",
+      data: "2025-02-06"
+    }
+  ];
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const lista = document.getElementById("listaOrcamentos");
+    
+    // Ordenar por data (mais antigo primeiro)
+    orcamentos.sort((a, b) => new Date(a.data) - new Date(b.data));
+    orcamentos.forEach((orcamento, index) => {
+      const item = document.createElement("li");
+      item.classList.add("orcamento");
+      item.innerHTML = `
+        <p><strong>${orcamento.nome}</strong></p>
+        <p class="data">Data: ${new Date(orcamento.data).toLocaleDateString()}</p>
+      `;
+    // Abre o modal com detalhes ao clicar
+      item.addEventListener("click", () => {
+        document.getElementById("modalNome").textContent = orcamento.nome;
+        document.getElementById("modalData").textContent = new Date(orcamento.data).toLocaleDateString();
+        document.getElementById("modalDescricao").textContent = orcamento.descricao;
+        document.getElementById("modalOrcamento").style.display = "flex";
+      });
+     lista.appendChild(item);
+    });
+  });
+    function fecharModal() {
+    document.getElementById("modalOrcamento").style.display = "none";
+    }
+</script>
+</body>
+</html>

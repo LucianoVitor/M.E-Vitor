@@ -1,0 +1,172 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  min-height: 100vh;
+}
+
+/*Menu lateral*/
+.sidebar {
+  background-color: #111;
+  padding: 20px;
+  width: 200px;
+  min-height: 100vh;
+  border-right: 2px solid #FFD700;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+/*sidebar*/
+.sidebar ul {
+  list-style: none;
+}
+.sidebar ul li {
+  margin: 20px 0;
+}
+.sidebar ul li a {
+  color: #FFD700;
+  text-decoration: none;
+  font-weight: bold;
+}
+/*Layout principal main,topbar e cards*/
+main {
+  margin-left: 200px;
+  padding: 20px;
+  flex: 1;
+  display: grid;
+  gap: 30px;
+}
+.topbar {
+  padding-bottom: 20px;
+  border-bottom: 2px solid #FFD700;
+}
+/*cards da area orçamentos, visitas e editar portfólio. */
+.card {
+  background-color: #111;
+  border: 1px solid #FFD700;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px #FFD70033;
+}
+
+/*titulo destacado*/
+.card h2 {
+  margin-top: 0;
+  border-bottom: 1px solid #FFD700;
+  padding-bottom: 10px;
+}
+
+/*Blocos visuais de orcamento e visita*/
+.orcamento, .visita {
+  margin-top: 15px;
+  background-color: #222;
+  padding: 15px;
+  border-radius: 8px;
+}
+/* BOTÕES GERAIS */
+button {
+  background-color: #FFD700;
+  border: none;
+  padding: 10px 15px;
+  margin-right: 10px;
+  border-radius: 5px;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #e6c200;
+}
+
+/*button*/
+.acao {
+  margin-top: 10px;
+  display: inline-block;
+}
+/*Botões dentro de orçamento */
+.orcamento button {
+  background-color: yellow;
+  color: black;
+  border: none;
+  padding: 8px 16px;
+  margin-right: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+.orcamento button:hover {
+  background-color: #e6c200;
+}
+/*Responsividade*/
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+  main {
+    margin: 0;
+    padding: 20px;
+    grid-template-columns: 1fr;
+  }
+   .topbar {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  .card {
+    width: 100%;
+  }
+}
+/*Lista de orçamentos*/
+.lista-orcamentos {
+  list-style: none;
+  padding: 0;
+}
+.lista-orcamentos li {
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #222;
+  border: 1px solid #FFD700;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.lista-orcamentos li:hover {
+  background-color: #333;
+}
+
+/* Modal ao abrir orcamento */
+.modal  {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+.modal-content {
+  background-color: #111;
+  padding: 20px;
+  border: 2px solid #FFD700;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  color: white;
+  position: relative; 
+}
+.fechar {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #FFD700;
+}
